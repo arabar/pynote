@@ -1,6 +1,5 @@
 from datetime import datetime
 import json
-import os
 import os.path
 import re
 import unicodedata
@@ -25,8 +24,9 @@ def load_notes(path=config.DATA_PATH):
     else:
         error('The directory {} does not exist!'.format(path))
         click.echo('Creating new directory {}.'.format(path))
-        os.makedirs(format(path), 0o755)
-        os.makedirs(format(path) + '/.trash', 0o755)
+        path.mkdir(0o755)
+        path = config.TRASH_PATH
+        path.mkdir(0o755)
         exit(1)
 
 
