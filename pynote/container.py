@@ -23,7 +23,9 @@ def load_notes(path=config.DATA_PATH):
         return sorted(data, key=lambda n: n.age)
     else:
         error('The directory {} does not exist!'.format(path))
-        click.echo('You can create it with "mkdir {}".'.format(path))
+        click.echo('Creating new directory {}.'.format(path))
+        path = config.TRASH_PATH
+        path.mkdir(parents=True)
         exit(1)
 
 
