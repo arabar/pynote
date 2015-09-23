@@ -26,9 +26,6 @@ def load_notes(path=config.DATA_PATH):
         click.echo('Creating new directory {}.'.format(path))
         path = config.TRASH_PATH
         path.mkdir(parents=True)
-        #path.mkdir(0o755)
-        #path = config.TRASH_PATH
-        #path.mkdir(0o755)
         exit(1)
 
 
