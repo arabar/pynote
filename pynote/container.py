@@ -24,9 +24,11 @@ def load_notes(path=config.DATA_PATH):
     else:
         error('The directory {} does not exist!'.format(path))
         click.echo('Creating new directory {}.'.format(path))
-        path.mkdir(0o755)
         path = config.TRASH_PATH
-        path.mkdir(0o755)
+        path.mkdir(parents=True)
+        #path.mkdir(0o755)
+        #path = config.TRASH_PATH
+        #path.mkdir(0o755)
         exit(1)
 
 
